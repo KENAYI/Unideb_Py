@@ -8,15 +8,30 @@ def greet(name: str, country_code: str = "HU") -> None:
                                     Defaults to "HU" (Hungary).
     """
     # Match statement to choose greeting based on country code
-    match country_code:
-        case "HU":
-            print("Szia {}!".format(name))  # Hungarian greeting
-        case "EN":
-            print("Hi {}!".format(name))    # English greeting
-        case "FI":
-            print("Moi {}!".format(name))   # Finnish greeting
-        case _:
-            print("Country code not found!")  # Default case for unknown country codes
+    # match country_code:
+    #     case "HU":
+    #         print("Szia {}!".format(name))  # Hungarian greeting
+    #     case "EN":
+    #         print("Hi {}!".format(name))    # English greeting
+    #     case "FI":
+    #         print("Moi {}!".format(name))   # Finnish greeting
+    #     case _:
+    #         print("Country code not found!")  # Default case for unknown country codes
+
+# OR
+
+# Conditional statements to choose greeting based on country code
+    if country_code == "HU":
+        print("Szia {}!".format(name))  # Hungarian greeting
+    elif country_code == "EN":
+        print("Hi {}!".format(name))    # English greeting
+    elif country_code == "FI":
+        print("Moi {}!".format(name))   # Finnish greeting
+    else:
+        print("Country code not found!")  # Default case for unknown country codes
+
+
+
 
 # Examples of function usage
 greet("Anna")           # Defaults to Hungarian greeting
