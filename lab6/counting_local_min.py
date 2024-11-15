@@ -1,5 +1,7 @@
 # Count local minimums from given lists
 
+import sys
+
 def count_of_local_minimums(lst):
     count = 0
     # Iterate over the list from the second element to the second-to-last element
@@ -9,27 +11,44 @@ def count_of_local_minimums(lst):
             count += 1
     return count
 
+# Reads lists until EOF 
 
 def main():
-    print("Enter lists of numbers: \n")
-    while True:
-        try:
-            # Read a line of input
-            line = input().strip()
-            if not line:  # Stop if an empty line is encountered
-                break
-            
-            # Convert the line to a list of integers
-            lst = list(map(int, line.split()))
-            
-            # Call the function to get the count of local minimums
-            result = count_of_local_minimums(lst)
-            
-            # Print the result for the current list
-            print(f"Local minimums count: {result}")
+    # Loop over each line of input from standard input 
+    for line in sys.stdin:
+        # Split the line into a list of strings, convert each to an integer, and store them in 'numbers'
+        numbers = [int(number) for number in line.split()]
+    
+        # Call the function 'count_of_local_minimums' with 'numbers' as an arguments
+        print(count_of_local_minimums(numbers))
 
-        except EOFError:
-            break  # End of input reached
+# Reads n lists  
+
+def main():
+    n = int(input("Enter the number of lines: "))
+
+    # Loop over 'n' lines of input
+    for i in range(n):
+        # Read a line of input
+        line = input("Enter numbers separated by spaces: ")
+        # Split the line into a list of strings, convert each to an integer, and store them in 'numbers'
+        numbers = [int(number) for number in line.split()]
+        print(count_of_local_minimums(numbers))
+
+# Reads lists until empty line
+
+def main():
+    # Read the first line of input
+    line = input("Enter numbers separated by spaces (leave blank to stop): ")
+    # Continue processing lines until an empty line is entered
+    while line != '':
+        # Split the line into a list of integers
+        numbers = [int(number) for number in line.split()]
+        print(count_of_local_minimums(numbers))
+        
+        # Read the next line of input
+        line = input("Enter numbers separated by spaces (leave blank to stop): ")
+
 
 # Run the main function
 if __name__ == "__main__":

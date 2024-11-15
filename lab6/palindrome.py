@@ -1,29 +1,52 @@
-# Checks for palindrome list of integers
+import sys
 
-def is_palindrome(lst):
-    return lst == lst[::-1]  # Check if the list is the same forwards and backwards
+def is_palindrome(numbers: list[int]) -> bool:
+    # Compare the list with its reversed version
+    if numbers == numbers[::-1]:
+        return True
+    else:
+        return False
+
+# Reads lists until EOF 
 
 def main():
-    print("Enter lists of numbers: \n")
-    while True:
-        try:
-            # Read a line of input
-            line = input().strip()
-            if not line:  # Stop if an empty line is encountered
-                break
-            
-            # Convert the line to a list of integers
-            lst = list(map(int, line.split()))
-            
-            # Call the function to check if the list is a palindrome
-            result = is_palindrome(lst)
-            
-            # Print the result for the current list
-            print(result)
+    # Loop over each line of input from standard input
+    for line in sys.stdin:
+        # Convert the space-separated numbers in the line into a list of integers
+        numbers = [int(number) for number in line.split()]
 
-        except EOFError:
-            break  # End of input reached
+        print(is_palindrome(numbers))
 
-# Run the main function
+# Reads n test cases
+
+def main():
+    # Get the number of lines of input
+    n = int(input("Enter the number of lines: "))
+
+    # Loop through 'n' lines
+    for i in range(n):
+        # Read a line of input
+        line = input("Enter numbers separated by spaces: ")
+        
+        # Convert the space-separated numbers into a list of integers
+        numbers = [int(number) for number in line.split()]
+        
+        # Call the function 'is_palindrom' to check if the list is a palindrome
+        # (Ensure that 'is_palindrom' is defined in your code)
+        print(is_palindrome(numbers))
+
+# Reads until an empty file
+
+def main():
+    # Read the first line of input
+    line = input("Enter numbers separated by spaces (leave blank to stop): ")
+    # Continue processing lines until an empty line is entered
+    while line != '':
+        # Convert the space-separated numbers into a list of integers
+        numbers = [int(number) for number in line.split()]
+        print(is_palindrome(numbers))
+        # Read the next line of input
+        line = input("Enter numbers separated by spaces (leave blank to stop): ")
+
 if __name__ == "__main__":
     main()
