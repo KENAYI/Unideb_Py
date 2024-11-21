@@ -19,11 +19,10 @@ def main1():
         print(delete_even_digits(line.strip()))
 
 def main2():
-    line = input('Enter string (leave empty to end): ')
-    
-    while line != '':
+    for line in sys.stdin:
+        if line.strip() == "":
+            break
         print(delete_even_digits(line.strip()))
-        line = input('Enter string (leave empty to end): ')
 
 if __name__ == "__main__":
     main2()
