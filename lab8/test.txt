@@ -1,0 +1,5 @@
+apple
+avocados
+bananas
+eggs
+chicken

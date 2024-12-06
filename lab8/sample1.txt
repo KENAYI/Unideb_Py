@@ -1,0 +1,4 @@
+Debrecen;Kassai;5.0;3
+Budapest;Paic;7.4;2
+Debrecen;Paic;2.3;4
+Szeged;Kassai;3.4;5
