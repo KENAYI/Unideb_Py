@@ -2,9 +2,9 @@ from typing import NamedTuple
 import sys
 
 Minion = NamedTuple('Minion', [('name', str),
-                               ('hunger', int),
-                               ('motivation', int),
-                               ('size', str)])
+                                ('hunger', int),
+                                ('motivation', int),
+                                ('size', str)])
 
 def line_to_minion(line):
     data = line.strip().split(';')

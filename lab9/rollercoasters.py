@@ -2,9 +2,9 @@ import sys
 from typing import NamedTuple
 
 RollerCoaster = NamedTuple('RollerCoaster', [('name', str),
-                                             ('world', str),
-                                             ('height', int),
-                                             ('time', int)])
+                                                ('world', str),
+                                                ('height', int),
+                                                ('time', int)])
 
 
 def line_to_coaster(line):
