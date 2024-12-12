@@ -8,7 +8,7 @@ def main():
     
     nums = [float(num) for num in sys.argv[2:]]
     
-    roots = apply_n_root
+    roots = apply_n_root(nums,n)
     
     output = ", ".join(f"{root:.3f}" for root in roots)
     print(output)
