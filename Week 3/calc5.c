@@ -10,10 +10,8 @@ int main() {
         if(left == 0 || right == 0) {
             break;
         }
-        if(!left || !right) {
-            break;        
-    }
-
+//        if(!left || !right) {
+//            break;        
     }
 
     return EXIT_SUCCESS;
